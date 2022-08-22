@@ -2,7 +2,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.schntgaispock.slimehud</groupId>
-    <artifactId>SlimeHUD</artifactId>
+    <artifactId>SlimeHUDPlus</artifactId>
     <version>1.2.4</version>
 
     <properties>

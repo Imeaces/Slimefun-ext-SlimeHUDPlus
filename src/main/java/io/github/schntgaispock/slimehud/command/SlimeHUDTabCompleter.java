@@ -18,6 +18,13 @@ public class SlimeHUDTabCompleter implements TabCompleter {
         
         if (args.length == 1) {
             hints.add("toggle");
+            hints.add("enable");
+            hints.add("disable");
+            return hints;
+        }
+
+        if (args.length == 2) {
+            hints.add("[PlayerName]");
             return hints;
         }
 
