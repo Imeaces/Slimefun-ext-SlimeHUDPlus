@@ -33,7 +33,7 @@ public class SlimeHUD extends AbstractAddon {
         getLogger().info("#    SlimeHUD by SchnTgaiSpock    #");
         getLogger().info("#=================================#");
 
-        Metrics metrics = new Metrics(this, 15883);
+        Metrics metrics = new Metrics(this, 16233);
         metrics.addCustomChart(
             new SimplePie("disabled", () -> {
                 return "" + getConfig().getBoolean("waila.disabled");
