@@ -1,6 +1,6 @@
 name: SlimeHUDPlus
 
-author: SchnTgaiSpock,AlanZhao
+author: SchnTgaiSpock,鬼斩,AlanZhao
 
 description: 一个实用插件，添加了一个可切换的WAILA(我在看什么)HUD放置Slimefun项目。本项目是原版的增强分支.
 
@@ -27,4 +27,7 @@ commands:
 permissions:
   slimehud.togglewaila:
     description: 切换准星显示
-    default: false
+    default: op
+  slimehud.admin.togglewaila:
+    description: 切换别人的准星显示
+    default: op

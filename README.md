@@ -5,14 +5,14 @@
 2. 添加了多种命令, 更灵活
 3. 深度汉化
 
-注意: 本人并非作者, 此插件由https://github.com/SchnTgaiSpock/SlimeHUD开发, 由鬼斩汉化https://github.com/SlimefunGuguProject/SlimeHUD , 本人在次基础上画蛇添足了一下, 要感谢去感谢作者和鬼斩去, 我做的微不足道!
+注意: 本人并非作者, 此插件由SchnTgaiSpock https://github.com/SchnTgaiSpock/SlimeHUD开发, 由鬼斩汉化https://github.com/SlimefunGuguProject/SlimeHUD , 本人在次基础上画蛇添足了一下, 要感谢去感谢作者和鬼斩去, 我做的微不足道!
 
 The main differences in this branch are:
 1. The default value is not enabled, but permission
 2. Multiple commands are added for flexibility
 3. Deep Chinese
 
-Note: I am not the author, this plugin developed by https://github.com/SchnTgaiSpock/SlimeHUD, by a ghost cut localization, https://github.com/SlimefunGuguProject/SlimeHUD, to thank to thank the author and ghost chop, I do insignificant!
+Note: I am not the author, this plugin developed by SchnTgaiSpock https://github.com/SchnTgaiSpock/SlimeHUD, by 鬼斩 localization, https://github.com/SlimefunGuguProject/SlimeHUD, to thank to thank the author SchnTgaiSpock and 鬼斩, I do insignificant!
 
 ---
 
