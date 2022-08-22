@@ -27,7 +27,7 @@ public class SlimeHUDCommandExecutor implements CommandExecutor {
             // May add more to the command in the future
             switch (args[0]) {
                 case "toggle":
-                    boolean wailaOn = SlimeHUD.getInstance().getPlayerData().getBoolean(uuid + ".waila", true);
+                    boolean wailaOn = SlimeHUD.getInstance().getPlayerData().getBoolean(uuid + ".waila", false);
                     SlimeHUD.getInstance().getPlayerData().set(uuid + ".waila", !wailaOn);
                     SlimeHUD.getInstance().getPlayerData().save();
                     player.sendMessage("§a§lSlimeHUD§7> HUD toggled " + (wailaOn ? "§coff" : "§aon"));

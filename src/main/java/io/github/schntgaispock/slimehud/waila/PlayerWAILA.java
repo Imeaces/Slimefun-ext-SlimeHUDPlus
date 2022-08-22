@@ -74,7 +74,7 @@ public class PlayerWAILA extends BukkitRunnable {
      */
     @Override
     public void run() {
-        if (!SlimeHUD.getInstance().getPlayerData().getBoolean(player.getUniqueId().toString() + ".waila", true)) {
+        if (!SlimeHUD.getInstance().getPlayerData().getBoolean(player.getUniqueId().toString() + ".waila", false)) {
             WAILABar.setVisible(false);
             return;
         }

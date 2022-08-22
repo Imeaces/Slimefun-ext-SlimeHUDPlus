@@ -22,9 +22,9 @@ commands:
     aliases: [sfhud, sfh]
     usage: Press [tab] for usage hints
     permission: slimehud.togglewaila
-    permission-message: You don't have permission to toggle your WAILA HUD!
+    permission-message: 您没有权限切换您的准星粘液物品显示!
 
 permissions:
   slimehud.togglewaila:
-    description: Able to toggle the WAILA HUD
-    default: true
+    description: 切换准星显示
+    default: false

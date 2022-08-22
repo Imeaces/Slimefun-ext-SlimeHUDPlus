@@ -1,4 +1,6 @@
 # Format of
 
 # player-uuid:
-#   disabled: bool
+#   waila: bool
+#f171141f-7bc7-3f67-bfa0-209cd6bf26e7:
+#  waila: true
