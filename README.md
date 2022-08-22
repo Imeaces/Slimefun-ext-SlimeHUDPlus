@@ -1,4 +1,20 @@
-# SlimeHUD
+# SlimeHUDPlus
+
+此分支的主要区别:
+1. 默认不启用, 而是权限
+2. 添加了多种命令, 更灵活
+3. 深度汉化
+
+注意: 本人并非作者, 此插件由https://github.com/SchnTgaiSpock/SlimeHUD开发, 由鬼斩汉化https://github.com/SlimefunGuguProject/SlimeHUD , 本人在次基础上画蛇添足了一下, 要感谢去感谢作者和鬼斩去, 我做的微不足道!
+
+The main differences in this branch are:
+1. The default value is not enabled, but permission
+2. Multiple commands are added for flexibility
+3. Deep Chinese
+
+Note: I am not the author, this plugin developed by https://github.com/SchnTgaiSpock/SlimeHUD, by a ghost cut localization, https://github.com/SlimefunGuguProject/SlimeHUD, to thank to thank the author and ghost chop, I do insignificant!
+
+---
 
 添加了 Slimefun 方块的 WAILA (我在看什么) 显示功能。  
 你可以直接获得你看向的方块的名称，不需要打开菜单，或是破坏方块。  
