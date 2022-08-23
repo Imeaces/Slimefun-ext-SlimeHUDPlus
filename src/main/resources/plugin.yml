@@ -14,7 +14,7 @@ api-version: 1.14
 
 depend:
 - Slimefun
-- GuizhanLibPlugin
+#- GuizhanLibPlugin
 
 commands:
   slimehud:
