@@ -1,45 +1,44 @@
 options:
-
+  #暂时弃用
   auto-update: false
-
 
 waila:
 
-  # If set to true, will disable waila for all players,
-  # overriding individual preferences and 'disabled-in'
+  # 如果设置为true，将禁用所有玩家的waila,
+  # 凌驾于个人偏好之上 'disabled-in'
   disabled: false
 
-  # List of worlds that the WAILA is disabled in
+  # 禁用WAILA的世界列表
   disabled-in: []
 
-  # Can be 'bossbar' or 'hotbar'
+  # 用 'bossbar' 还是 'hotbar'
   location: bossbar
 
-  # Whether or not to keep colors and format of the text. If set to false, defaults to white.
+  #是否保留文本的颜色和格式。如果设置为false，那么默认是白色。
   use-original-colors: true
 
-  # The color of the bossbar. Must be a valid color in 'snake_case'.
-  # 'inherit' means 'match the color of the bossbar to that of the text'.
-  # 'default' is white
+  #  bossbar 的颜色。必须是'snake_case'中的有效颜色。
+  # 'inherit 的意思是'将boss栏的颜色匹配到文本的颜色'。
+  # 'default 是白色的
   bossbar-color: inherit
 
-  # How many nodes on the cargo network; shown on connectors and managers
+  # 展示货运网络上有多少个节点;在连接器和管理器中显示
   show-cargo-size: true
 
-  # Shown on output and input nodes
+  # 显示输出和输入节点
   show-cargo-channel: true
 
-  # How many nodes on the energy network; shown on connectors and regulators
+  # 显示能源网络上有多少个节点;在连接器和调节器上显示
   show-energy-size: true
 
-  # Shown on capacitors
+  # 显示电容
   show-energy-stored: true
 
-  # Shown on most machines
+  # 显示大多数机器
   show-machine-progress: true
 
-  # Shown on most generators
+  # 显示大多数发电机
   show-generator-generation: true
 
-  # Rate at which WAILA updates, in *game* ticks
+  # 多少tick更新一次准星方块信息, 越高占用越低, 越低体验越好性能越差, 20tick=1秒
   tick-rate: 10
