@@ -61,3 +61,7 @@ https://user-images.githubusercontent.com/101147426/180625211-cbcfd01d-d418-4e6c
 
 *InfinityLib* by Mooy1\
 *Lombok* by Project Lombok
+
+## bStats
+
+![bStats](https://bstats.org/signatures/bukkit/SlimeHUDPlus.svg)
