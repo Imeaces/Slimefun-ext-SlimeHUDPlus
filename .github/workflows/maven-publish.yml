@@ -27,7 +27,12 @@ jobs:
     - name: Build with Maven
       run: mvn package --file pom.xml
 
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+    - name: Automatic Releases
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "autobuild"
+        prerelease: true
+        title: "SlimeHUDPlus 自动构建版本"
+        files: |
+          /home/runner/work/SlimeHUDPlus/SlimeHUDPlus/target/SlimeHUDPlus*.jar
