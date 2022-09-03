@@ -5,15 +5,24 @@
 2. 添加了多种命令, 更灵活
 3. 深度汉化
 
+---
 可以给玩家或者VIP的命令(默认OP拥有权限)
+
 /slimehud toggle 切换显示状态 | 权限节点 slimehud.togglewaila
+
 /slimehud enable 开启自己的显示状态 | 权限节点 slimehud.togglewaila
+
 /slimehud disable 关闭自己的显示状态 | 权限节点 slimehud.togglewaila
 
+
 管理员命令,支持控制台(默认OP拥有权限)
+
 /slimehud enable 玩家名 开启其他玩家显示状态 | 权限节点   slimehud.admin.togglewaila
+
 /slimehud disable 玩家名 关闭其他玩家的显示状态 | 权限节点   slimehud.admin.togglewaila
 
+
+---
 详细教程请访问 https://www.mcbbs.net/thread-1377794-1-1.html
 
 注意: 本人并非作者, 此插件由SchnTgaiSpock https://github.com/SchnTgaiSpock/SlimeHUD 开发, 由鬼斩汉化 https://github.com/SlimefunGuguProject/SlimeHUD , 本人在次基础上画蛇添足了一下, 要感谢去感谢作者和鬼斩去, 我做的微不足道!
