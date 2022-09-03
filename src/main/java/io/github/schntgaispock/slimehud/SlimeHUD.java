@@ -29,9 +29,9 @@ public class SlimeHUD extends AbstractAddon {
     public void enable() {
         instance = this;
 
-        getLogger().info("#============================================#");
+        getLogger().info("#=============================================#");
         getLogger().info("# SlimeHUDPlus by SchnTgaiSpock,鬼斩,AlanZhao #");
-        getLogger().info("#============================================#");
+        getLogger().info("#=============================================#");
 
         Metrics metrics = new Metrics(this, 16233);
         metrics.addCustomChart(
