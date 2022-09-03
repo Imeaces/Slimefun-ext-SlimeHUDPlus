@@ -1,39 +1,54 @@
-# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
-# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+# 由于我不会用Github这个工作流, 所以这个文件是复制 https://github.com/mxlt02/SlimeHUDPlus/edit/master/.github/workflows/maven.yml项目的, 如有冒犯表示抱歉联系我删除
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Maven Package
+name: SlimeHUDPlus 自动构建
 
 on:
   push:
+    branches:
+      - master
     paths:
-      - '**/*src/**/*.java'
+      - 'src/**'
+      - 'pom.xml'
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+      - 'src/**'
+      - 'pom.xml'
 
 jobs:
   build:
-    if: startsWith(github.event.head_commit.message, '[CI skip]') == false
+    if: contains(github.event.head_commit.message, '✨') == true
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
-    - uses: actions/checkout@v3.0.2
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v2
       with:
-        distribution: 'temurin'
+        distribution: 'zulu'
         java-version: 17
-        cache: 'maven'
-    - name: Build with Maven
-      run: mvn package --file pom.xml
-
+        java-package: jdk
+        architecture: x64
+    - run: mvn -B package --file pom.xml --errors
+    - run: mkdir staging && cp target/*.jar staging
+    - uses: actions/cache@v2
+      if: github.event_name != 'pull_request'
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    - uses: actions/upload-artifact@v2
+      if: github.event_name != 'pull_request'
+      with:
+        name: SlimeHUDPlus.jar
+        path: staging
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@v1.2.1
       if: github.event_name != 'pull_request'
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "autobuild"
+        automatic_release_tag: "exp"
         prerelease: true
         title: "SlimeHUDPlus 自动构建版本"
         files: |
-          /home/runner/work/SlimeHUDPlus/SlimeHUDPlus/target/SlimeHUDPlus*.jar
+          target/SlimeHUDPlus*.jar
