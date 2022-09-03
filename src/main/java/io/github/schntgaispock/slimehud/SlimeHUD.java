@@ -50,7 +50,7 @@ public class SlimeHUD extends AbstractAddon {
         WAILAManager.setup();
         CommandManager.setup();
         hudController = new HudController();
- 
+
 //        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
 //            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "SlimefunGuguProject", "SlimeHUD", "master", false);
 //        }
