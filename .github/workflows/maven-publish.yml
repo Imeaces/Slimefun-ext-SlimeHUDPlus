@@ -47,7 +47,7 @@ jobs:
       if: github.event_name != 'pull_request'
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "exp"
+        automatic_release_tag: "autobuild"
         prerelease: true
         title: "SlimeHUDPlus 自动构建版本"
         files: |
