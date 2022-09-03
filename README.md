@@ -5,6 +5,8 @@
 2. 添加了多种命令, 更灵活
 3. 深度汉化
 
+详细教程请访问 https://www.mcbbs.net/thread-1377794-1-1.html
+
 注意: 本人并非作者, 此插件由SchnTgaiSpock https://github.com/SchnTgaiSpock/SlimeHUD 开发, 由鬼斩汉化 https://github.com/SlimefunGuguProject/SlimeHUD , 本人在次基础上画蛇添足了一下, 要感谢去感谢作者和鬼斩去, 我做的微不足道!
 
 The main differences in this branch are:
