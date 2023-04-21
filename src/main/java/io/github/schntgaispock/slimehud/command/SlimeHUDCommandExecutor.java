@@ -1,11 +1,18 @@
 package io.github.schntgaispock.slimehud.command;
 
+import io.github.schntgaispock.slimehud.waila.PlayerWAILA;
+import io.github.schntgaispock.slimehud.waila.WAILAManager;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import io.github.schntgaispock.slimehud.SlimeHUD;
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * Functionality for the '/slimehud'command
@@ -29,15 +36,15 @@ public class SlimeHUDCommandExecutor implements CommandExecutor {
             switch (args[0]) {
                 case "toggle":
                     if (!player.hasPermission("slimehud.togglewaila")) {
-                        player.sendMessage("§a§lSlimeHUD§7> §cYou don't have permission to toggle your WAILA HUD!");
+                        player.sendMessage("§a§l粘液方块信息§7> §c您没有权限切换您的粘液准星方块信息显示!");
                         return true;
                     }
                     if (SlimeHUD.getInstance().getConfig().getBoolean("waila.disabled", false)) {
-                        player.sendMessage("§a§lSlimeHUD§7> §cThe WAILA HUD is disabled!");
+                        player.sendMessage("§a§l粘液方块信息§7> §c粘液准星方块信息显示已被禁用!");
                         return true;
                     }
                     if (SlimeHUD.getInstance().getConfig().getList("waila.disabled-in", Collections.EMPTY_LIST).contains(player.getWorld().getName())) {
-                        player.sendMessage("§a§lSlimeHUD§7> §cThe WAILA HUD is disabled in this world!");
+                        player.sendMessage("§a§l粘液方块信息§7> §c这个世界不允许使用粘液准星方块信息显示!");
                         return true;
                     }
                     boolean wailaOn = SlimeHUD.getInstance().getPlayerData().getBoolean(uuid + ".waila", false);
