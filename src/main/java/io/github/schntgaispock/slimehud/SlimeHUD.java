@@ -60,7 +60,6 @@ public class SlimeHUD extends AbstractAddon {
     public void disable() {
         instance = null;
         getPlayerData().save();
-        getConfig().save();
     }
 
     public static HudController getHudController() {

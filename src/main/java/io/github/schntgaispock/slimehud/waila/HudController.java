@@ -80,7 +80,7 @@ public class HudController {
                 enct == EnergyNetComponentType.GENERATOR ||
                 enct == EnergyNetComponentType.CONSUMER) &&
                 enc.getCapacity() > 0) {
-            return HudBuilder.formatEnergyStored(enc.getCharge(request.getLocation()));
+            return HudBuilder.formatEnergyStored(enc.getCharge(request.getLocation()), enc.getCapacity());
         }
         return "";
     }
@@ -88,6 +88,8 @@ public class HudController {
     @Nonnull
     @SuppressWarnings("unchecked")
     private String processMachine(@Nonnull HudRequest request) {
+        StringBuilder hudText = new StringBuilder();
+
         if (!SlimeHUD.getInstance().getConfig().getBoolean("waila.show-machine-progress")) {
             return "";
         }
@@ -97,16 +99,29 @@ public class HudController {
         MachineOperation operation = machine.getMachineProcessor().getOperation(request.getLocation());
 
         if (operation == null) {
-            return "&7| 空闲";
+            hudText.append("&7| 空闲");
+            if (request.getSlimefunItem() instanceof EnergyNetComponent) {
+                hudText.append(" ").append(processCapacitor(request));
+            }
+            return hudText.toString();
         }
 
         int progress = operation.getProgress();
         int total = operation.getTotalTicks();
-        return HudBuilder.formatProgressBar(progress, total);
+
+        hudText.append(HudBuilder.formatProgressBar(progress, total));
+
+        if (request.getSlimefunItem() instanceof AGenerator) {
+            hudText.append(" ").append(processGenerator(request));
+        }
+
+        return hudText.toString();
     }
 
     @Nonnull
     private String processGenerator(@Nonnull HudRequest request) {
+        StringBuilder hudText = new StringBuilder();
+
         if (!SlimeHUD.getInstance().getConfig().getBoolean("waila.show-generator-generation")) {
             return "";
         }
@@ -114,14 +129,22 @@ public class HudController {
         AGenerator gen = (AGenerator) request.getSlimefunItem();
         int generation = gen.getEnergyProduction();
         if (generation > 0) {
-            return HudBuilder.formatEnergyGenerated(generation);
+            hudText.append(HudBuilder.formatEnergyGenerated(generation));
         } else {
-            return "&7| 不在发电";
+            hudText.append("&7| 不在发电");
         }
+
+        if (gen instanceof EnergyNetComponent) {
+            hudText.append(" ").append(processCapacitor(request));
+        }
+
+        return hudText.toString();
     }
 
     @Nonnull
     private String processSolarGenerator(@Nonnull HudRequest request) {
+        StringBuilder hudText = new StringBuilder();
+
         if (!SlimeHUD.getInstance().getConfig().getBoolean("waila.show-generator-generation")) {
             return "";
         }
@@ -130,10 +153,16 @@ public class HudController {
         // Solar Generators dont use any fuel, so it's ok to call getGeneratedOutput
         int generation = gen.getGeneratedOutput(request.getLocation(), null);
         if (generation > 0) {
-            return HudBuilder.formatEnergyGenerated(generation);
+            hudText.append(HudBuilder.formatEnergyGenerated(generation));
         } else {
-            return "&7| 不在发电";
+            hudText.append("&7| 不在发电");
         }
+
+        if (gen instanceof EnergyNetComponent) {
+            hudText.append(" ").append(processCapacitor(request));
+        }
+
+        return hudText.toString();
     }
 
     @Nonnull
@@ -181,6 +210,8 @@ public class HudController {
 
     @Nullable
     private Function<HudRequest, String> tryGetHandler(@Nonnull SlimefunItem slimefunItem) {
+        // First see if there is a custom handler from an addon (to allow overriding the
+        // default machine handler)
         for (Map.Entry<Class<?>, Function<HudRequest, String>> entry : customHandlers.entrySet()) {
             if (entry.getKey().isInstance(slimefunItem)) {
                 return entry.getValue();
@@ -196,14 +227,13 @@ public class HudController {
 
     @Nonnull
     public String processRequest(@Nonnull HudRequest request) {
-        // First see if there is a custom handler from an addon (to allow overriding the
-        // default machine handler
         Function<HudRequest, String> handler = tryGetHandler(request.getSlimefunItem());
         if (handler == null) {
             // No handler found, return empty string
             return "";
         } else {
-            return handler.apply(request);
+            String ret = handler.apply(request);
+            return ret == null ? "" : ret;
         }
     }
 

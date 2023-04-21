@@ -2,12 +2,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.schntgaispock.slimehud</groupId>
-    <artifactId>SlimeHUDPlus</artifactId>
-    <version>1.2.4</version>
+    <artifactId>SlimeHUD</artifactId>
+    <version>1.2.7</version>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -34,7 +34,7 @@
     </repositories>
 
     <build>
-        <finalName>${project.name}${project.version}</finalName>
+        <finalName>${project.name} v${project.version}</finalName>
         <defaultGoal>clean package</defaultGoal>
         <sourceDirectory>src/main/java</sourceDirectory>
 
@@ -97,7 +97,7 @@
         <dependency>
             <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-32</version>
+            <version>RC-33</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -117,7 +117,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
         </dependency>
 
         <dependency>
@@ -139,12 +139,12 @@
             <version>3.0.0</version>
             <scope>compile</scope>
         </dependency>
-        
-<!--        <dependency>-->
-<!--            <groupId>net.guizhanss</groupId>-->
-<!--            <artifactId>GuizhanLibPlugin</artifactId>-->
-<!--            <version>1.0.0</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
+
+        <dependency>
+            <groupId>net.guizhanss</groupId>
+            <artifactId>GuizhanLibPlugin</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
