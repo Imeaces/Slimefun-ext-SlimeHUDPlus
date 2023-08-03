@@ -36,6 +36,8 @@ Note: I am not the author, this plugin developed by SchnTgaiSpock https://github
 
 ---
 
+以下内容是原README, 表示尊重不修改, 请勿误会将其中的联系方式或群误会成我的
+
 添加了 Slimefun 方块的 WAILA (我在看什么) 显示功能。  
 你可以直接获得你看向的方块的名称，不需要打开菜单，或是破坏方块。  
 
