@@ -4,7 +4,7 @@
 1. 默认不启用, 而是权限
 2. 添加了多种命令, 更灵活
 3. 深度汉化
-
+与主分支原版自动同步更新,不会落后与原版!
 ---
 可以给玩家或者VIP的命令(默认OP拥有权限)
 
@@ -36,7 +36,6 @@ Note: I am not the author, this plugin developed by SchnTgaiSpock https://github
 
 ---
 
-以下内容是原README, 表示尊重不修改, 请勿误会将其中的联系方式或群误会成我的
 
 添加了 Slimefun 方块的 WAILA (我在看什么) 显示功能。  
 你可以直接获得你看向的方块的名称，不需要打开菜单，或是破坏方块。  
@@ -48,16 +47,8 @@ Note: I am not the author, this plugin developed by SchnTgaiSpock https://github
 
 ## 下载
 
-点击这里下载 SlimeHUD: [下载 SlimeHUD](https://builds.guizhanss.net/SlimefunGuguProject/SlimeHUD/master)
+点击这里下载 SlimeHUDPlus: [下载 SlimeHUD]([https://builds.guizhanss.net/SlimefunGuguProject/SlimeHUD/master](https://github.com/mxlt02/SlimeHUDPlus/releases))
 
-<p align="center">
-  <a href="https://github.com/SlimefunGuguProject/SlimeHUD/actions/workflows/maven.yml">
-    <img src="https://github.com/SlimefunGuguProject/SlimeHUD/actions/workflows/maven.yml/badge.svg" alt="Java CI"/>
-  </a>
-  <a href="https://builds.guizhanss.net/SlimefunGuguProject/SlimeHUD/master">
-    <img src="https://builds.guizhanss.net/f/SlimefunGuguProject/SlimeHUD/master/badge.svg" alt="Build status"/>
-  </a>
-</p>
 
 ## 预览
 
